@@ -1,0 +1,101 @@
+# Save the provided HTML into a downloadable file for editing and packaging
+updated_valentine_html_path = "/mnt/data/LoiMoi_Valentine_Styled.html"
+
+html_valentine_updated = """
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời mời từ Khương Duy</title>
+    <link rel="stylesheet" href="./main.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <img class="paperHeart paperHeart1" style="--time: 0s" src="./img/paperHeart.webp" alt="">
+        <img class="paperHeart paperHeart2" style="--time: 1s" src="./img/paperHeart.webp" alt="">
+        <img class="paperHeart paperHeart3" style="--time: 2.5s" src="./img/paperHeart.webp" alt="">
+        <img class="paperHeart paperHeart4" style="--time: 4s" src="./img/paperHeart.webp" alt="">
+        <img class="paperHeart paperHeart5" style="--time: 2s" src="./img/paperHeart.webp" alt="">
+        <img class="paperHeart paperHeart6" style="--time: 3s" src="./img/paperHeart.webp" alt="">
+
+        <div class="boxTitle">
+            <p class="firstTitle partTitle">Gửi công chúa An Huyên,</p>
+            <p class="secondTitle partTitle">Nàng có muốn cùng ta dạo chơi cuối tuần này không?</p>
+            <p class="thirdTitle partTitle">(Thứ 7, ngày 6/7 lúc 4:00 PM)</p>
+        </div>
+
+        <div class="boxCloud">
+            <div class="cloud"></div>
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+
+            <div class="btnBox">
+                <div class="cloudBtn"></div>
+                <button class="openBtn" onclick="showOptions()">Trả lời ta nè công chúa ơi</button>
+            </div>
+        </div>
+
+        <div class="cardValentine" id="optionCard" style="display:none;">
+            <div class="left">
+                <div class="leftFront">
+                    <p class="des">Câu trả lời của nàng?</p>
+                    <button onclick="showTimeline()">Tất nhiên rồi</button>
+                    <button onclick="showMoreOptions()">Hong, bận rùi</button>
+                </div>
+            </div>
+            <div class="left" id="moreOptions" style="display:none;">
+                <div class="leftFront">
+                    <p class="des">Thiệt luôn hả 😢</p>
+                    <button onclick="showTimeline()">Tất nhiên là đi rồi</button>
+                    <button onclick="showFinalOptions()">Đã nói là bận rùi</button>
+                </div>
+            </div>
+            <div class="left" id="finalOptions" style="display:none;">
+                <div class="leftFront">
+                    <p class="des">Không chịu đâuu 😭</p>
+                    <button onclick="showTimeline()">Tất nhiên là đi rùiii</button>
+                    <button onclick="showTimeline()">Tất nhiên là đi rùiii</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="rightContent" id="timelineSection" style="display:none;">
+            <p class="letterContent">[Hiện ảnh timeline ở đây]</p>
+            <img src="timeline.png" alt="Timeline" style="width: 90%; border-radius: 10px;">
+            <p style="margin-top: 20px;">Nàng không cần chuẩn bị bất cứ gì, cứ ăn mặc thật là xinh xắn nhất có thể và đợi hoàng tử sang rước nhó :33</p>
+        </div>
+    </div>
+
+    <script>
+        function showOptions() {{
+            document.getElementById("optionCard").style.display = "block";
+        }}
+        function showMoreOptions() {{
+            document.getElementById("moreOptions").style.display = "block";
+        }}
+        function showFinalOptions() {{
+            document.getElementById("finalOptions").style.display = "block";
+        }}
+        function showTimeline() {{
+            document.getElementById("timelineSection").style.display = "block";
+        }}
+    </script>
+</body>
+</html>
+"""
+
+# Save it as an HTML file
+with open(updated_valentine_html_path, "w", encoding="utf-8") as f:
+    f.write(html_valentine_updated)
+
+updated_valentine_html_path
